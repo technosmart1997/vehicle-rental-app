@@ -1,0 +1,21 @@
+<div class="row">
+    <div  class="col-md-12"><h1><strong>SERVICES</strong></h1></div>
+</div>
+    <hr>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10  text-center" >
+                <div *ngIf="showError" class="alert alert-danger">
+                        <strong>Sorry!</strong> There are no Services Yet!
+                </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+  <div class="container mt-2">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" *ngFor="let vehicle of vehicles">
+            <app-vendorvehicle [vehicle_detail]="vehicle" (onDelete) = "onDelete()"></app-vendorvehicle>  
+        </div>
+    </div>
+  </div>
+  

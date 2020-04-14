@@ -1,0 +1,159 @@
+
+                    <div class="row">
+    
+                        <div style="margin-left: 25px;" class="col-md-12"><h1><strong>VEHICLE DETAIL</strong></h1></div>
+                    </div>
+                        <hr>
+                      <div class="container mt-2">
+                        <div *ngIf="vehicleData" class="row">
+                          <div class="col-lg-1"></div>
+                            <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-9" >
+                                <div class="card card-block">
+                                  <div class="row">
+                                    <div class="col-12 col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                                        <div>
+                                            <img *ngIf ="!vehicleData.photoUrl" style="height: 220px" src="../../../assets/img/notavailable.jpg" alt="Vehicle Photo"/>
+                                            <img *ngIf ="vehicleData.photoUrl" style="height: 220px" [src]="vehicleData.photoUrl" alt="Vehicle Photo"/>
+                                        </div>
+                                        <p style="text-align: center;font-weight: bold;font-size:24px"> {{vehicleData.VehicleName}}</p>
+                                    </div>
+                                    <div class="col-12 col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                                      <div style="padding : 10px;min-height:80px; margin-top : 50px">
+                                        <p><span id="key">Name:</span>&nbsp;{{vehicleData.VendorName}} </p>
+                                        <p><span id="key">Address:</span>&nbsp; {{vehicleData.Address}} </p>
+                                        <p><span id="key">No. of Vehicle vendor has:</span>&nbsp; {{vehicleData.VehiclesCount}} </p>
+                                        <p><span id="key">City :</span>&nbsp; {{city}} </p>
+                                      </div> 
+                                  </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    
+                          
+                                      <div class="col-md-4 text-center" >
+                                        <label style="font-weight: bold;" for="form">DATE FROM:</label>
+                                        <angular2-date-picker (onDateSelect)="onDateSelectFrom($event)" [(ngModel)]="from_date" [settings]="settings"></angular2-date-picker>
+                                
+                                      </div>
+                                      <div class="col-md-4 text-center">
+                                          <span><i class="fas fa-calendar-alt fa-4x"></i></span>
+                                          <br>
+                                          <h6 style="font-variant: normal;" *ngIf="days > 0">{{ days }} day &nbsp; {{ hours }} hour </h6>
+                                          <h6 style="font-variant: normal;" *ngIf="days == 0">{{ hours }}&nbsp; hour </h6>
+                                        </div>
+
+                                        <div class="col-md-4 text-center">
+                                          <label style="font-weight: bold;" for="form">DATE TO:</label>
+                                          <angular2-date-picker (onDateSelect)="onDateSelectTo($event)" [(ngModel)]="to_date" [settings]="settings"></angular2-date-picker>
+                                        </div>
+
+                                  </div> 
+                              <br>
+                  <hr>
+                                  <div class="row">
+                                    <div class="col-0 col-xs-0 col-sm-0 col-md-0 col-lg-2"></div>
+                                    <div style="margin: 10px;" class="text-center col-12 col-xs-12 col-sm-6  col-md-6 col-lg-4">
+                                        <h6>Select No of Vehicles:</h6>
+                                        <select class="form-control" (change)="selectOption()" [(ngModel)]="vehicleCount">
+                                           <option *ngFor="let a of vehicleArray; let index = index" value="{{index+1}}">{{ index+1 }}</option>
+                                        </select>
+
+                                    </div>
+              
+                                    <div style="margin: 10px;" class="text-center col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                        <h6 style="margin: 0 ">Amount Payable :</h6>
+                                        <br>
+                                         <h6 style="font-weight: bold"> &#8377; &nbsp; {{ ((days*amountPerDay)+(hours*amountPerHour))*vehicleCount }} </h6>
+                                    </div>
+                                    <div class="col-0 col-xs-0 col-sm-0 col-md-0 col-lg-2"></div>
+                                  </div>
+                                  
+                                    <br>
+                                  <div class="row">
+                                    <div class="col-0 col-xs-0 col-sm-0 col-md-0 col-lg-3"></div>
+                                      <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                          <span><i style="color : red" class="fas fa-dot-circle fa-lg"></i> &nbsp; &nbsp; {{vehicleData.address}}</span>  
+                                      </div>
+                                      <div class="col-0 col-xs-0 col-sm-0 col-md-0 col-lg-3"></div>
+                                
+                                  </div>
+                            
+                                    <hr>
+                                    <h5 style="text-align:center">PAYMENT</h5>
+                                    <div class="row">
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-6">
+                                          <h6>Select Percent of Amount to Pay</h6>
+                                          <select class="form-control" (change)="selectPerPaying()" [(ngModel)]="perCentagePaying">
+                                            <option selected="true" value="100">100 %</option>
+                                            <option value="80">80 %</option>
+                                            <option value="60">60 %</option>
+                                            <option value="40">40 %</option>
+                                            <option value="20">20 %</option>
+                                          </select>
+                                        </div>
+                                        <br>
+                                        <div class="col-md-3"></div>
+
+                                    </div>
+
+                                    <br>
+                                    <p style="text-align:center">You have to pay minimum 20% of the total amount</p>
+                                    <br>
+                                    <div class="row">
+                                      <div class="col-md-2"></div>
+                                      <div class="col-md-8">
+                                        <div class="row">
+                                          <div class="col-md-7">
+                                            <input type="text" class="form-control" placeholder="Promo Code"> 
+                                          </div>  
+                                          <div class="col-md-5">
+                                              <button class="btn btn-primary btn-block bookbtn">APPLY DEAL</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-2"></div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="row">
+                                      <div class="col-0 col-xs-0 col-sm-0 col-md-0 col-lg-2"></div>
+                                      <div class="col-8 col-xs-8 col-sm-7 col-md-7 col-lg-5">
+                                          <div>
+                                            <p><span id="key">Total Amount:</span></p>
+                                            <p><span id="key">Amount Paying:</span></p>
+                                            <p><span id="key">Amount Remaining:</span></p>
+                                          </div> 
+                                      </div>
+                                      <div class="col-4 col-xs-4 col-sm-5 col-md-5 col-lg-3">
+                                          <div>
+                                            <p>&#8377; &nbsp;{{ total_amount }} </p>
+                                            <p>&#8377; &nbsp;{{ amount_paying }} </p>
+                                            <p>&#8377; &nbsp;{{ amount_left }} </p>
+                                          </div> 
+                                      </div>
+                                      <div class="col-0 col-xs-0 col-sm-0 col-md-0 col-lg-2"></div>
+                                    </div>
+                                    <br>
+                                    <p style="text-align:center">Pay the remaining amount at the time of delivery.</p>
+                                      <hr>
+                                     <div class="row">
+                                        <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-md-1"></div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-10 col-md-10">
+                                            <button (click)="bookVehicle()" class="btn btn-primary btn-block bookbtn">BOOK VEHICLE</button>
+                                        </div>
+                                        <div class="col-0 col-xs-0 col-sm-0 col-md-0 col-md-1"></div>
+                                      </div>
+                                          
+                                  
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>               
+                      </div>
+                      
+
+
+              

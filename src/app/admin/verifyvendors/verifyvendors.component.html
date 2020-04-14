@@ -1,0 +1,23 @@
+<div  class="row">
+    <div class="col-md-12"><h1><strong>VERIFY VENDORS</strong></h1></div>
+</div>
+    <hr>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10  text-center" >
+                <div *ngIf="showError" class="alert alert-danger">
+                        <strong>Sorry!</strong> There are no Vendors!
+                </div>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+  <div class="container mt-2">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" *ngFor="let vendor of vendors">
+            <app-verifyvendor [vendor_detail]="vendor"></app-verifyvendor>  
+        </div>
+    </div>
+    
+  </div>
+  

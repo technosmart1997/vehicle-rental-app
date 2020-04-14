@@ -1,0 +1,29 @@
+    
+    <div *ngIf="vendorData" class="card card-block">
+            <!-- <h4 style="margin:5px" class="card-title text-right"><i class="material-icons">settings</i></h4> -->
+            <div style="padding : 5px;">
+                <img [src]="vendorData.photoURL" alt="Vendor Photo"/>
+            </div>
+            <br>
+                <div style="min-height:100px"> 
+                    <p><span id="key">Name :</span> &nbsp; {{vendorData.Name }}</p>  
+                    <p><span id="key">Contact :</span> &nbsp;  {{vendorData.PhoneNumber }}</p> 
+                    <p><span id="key">Email :</span>&nbsp; <span style="font-size:13px;"> {{vendorData.Email}}</span></p>        
+                </div>       
+                <div class="buttons">
+                    <div class="row">
+                            <div class="col-md-6">
+                                <button (click)="openListings(vendorId)" class="btn btn-success btn-block">Listings</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button (click)="vendorBookings(vendorId)" class="btn btn-success btn-block">Bookings</button>
+                            </div>
+                    </div>  
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button  (click)="deleteVendor()" class="btn btn-danger btn-block">Delete Vendor</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        

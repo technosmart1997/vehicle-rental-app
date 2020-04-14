@@ -1,0 +1,47 @@
+<div class="main_div">
+  <div class="login-wrap">
+
+      <h3 style="text-align: center; color : #fff; margin:0">LOG IN</h3>
+
+    <p><br></p>
+
+    <div class="row">
+         <div class="col-md-1"></div>
+
+      <div class="col-md-10">
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Admin Username" [formControl]="myForm.controls['email']" class="form-control">
+              </div>
+              <div style="color : #fff" *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched">
+                Email is required.
+            </div>
+              <br>
+                <div class="input-group">
+                  <input type="password" name="password" placeholder="Admin Password" [formControl]="myForm.controls['password']" class="form-control">
+                </div>
+                <div style="color : #fff" *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched">
+                  Passwords must be of atleast 8 characters.
+              </div>
+                <br>
+              <div class="input-group">
+                  <input type="submit" style="border-radius : 25px;cursor: pointer;background-color: #8d3514;color : #fff"  class="btn btn-block" [disabled] = "!myForm.valid" value="LOGIN">
+                </div>
+          </form>
+          <br>
+        </div>
+        <div class="col-md-1"></div>
+    </div>  
+
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngIf="isAuthenticated" class="alert alert-dark alert-dismissible">
+          <button style="color: black" type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ message }} 
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+</div>

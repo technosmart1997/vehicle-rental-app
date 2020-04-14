@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12"><h2><strong>VERIFY VENDOR</strong></h2></div>
+  </div>
+  <div *ngIf="vData" class="row">
+    <div class="col-0 col-sm-2 col-md-2 col-lg-3 col-xl-3"></div>
+    <div  class="col-12 col-sm-8 col-md-8 col-lg-6 col-xl-5" >
+      <div class="card card-block">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div style="padding : 5px;">
+              <img [src]="vData.photoURL" alt="Photo of sunset"/>
+          </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <br>
+            <p><span id="key">Name :</span>&nbsp; {{vData.Name}} </p>
+            <p><span id="key">Contact :</span>&nbsp; {{vData.PhoneNumber}} </p>
+            <p><span id="key">Email :</span>&nbsp; <span style="font-size:13px;">{{vData.Email}} </span></p>
+            <p><span id="key">Address :</span>&nbsp; {{vData.VendorAddress}} </p>
+            <p><span id="key">Aadhaar No :</span>&nbsp; <span style="font-size:13px;">{{vData.AadharNumber}} </span></p>
+            <div class="buttons">
+              <div class="row">
+                  <div class="col-md-12">
+                      <button id="verify" (click)="verifyVendor()" class="btn btn-success btn-block">Verify Vendor</button>
+                  </div>
+              </div>
+          </div>
+    </div>
+    
+    </div>
+
+    <div class="col-0 col-sm-2 col-md-2 col-lg-3 col-xl-4"></div>
+  </div>      
+</div>

@@ -1,0 +1,31 @@
+<div id="sidebar" #sidebar>
+    
+
+  <div id="sidebar">
+   <div class="sidebar-header">
+        <div id="header_info">
+          <h4>Welcome</h4>
+          <h5 style="font-size: 14px;">Hello, {{ username | uppercase }}</h5>
+        </div>
+     </div>
+   
+     <ul class="list-unstyled components">
+      
+
+       <li ><a [routerLink]="['vehicles' ]" routerLinkActive="link-active">ALL VEHICLES</a></li>
+       <li><a [routerLink]="['users']" routerLinkActive="link-active">USERS</a></li>
+       <li><a [routerLink]="['vendors']" routerLinkActive="link-active">VENDORS</a></li>
+      
+       <li><a [routerLink]="['today-bookings']" routerLinkActive="link-active">TODAY's BOOKINGS</a></li>
+       <li><a [routerLink]="['verify-vendors']" routerLinkActive="link-active">VERIFY VENDORS</a></li>
+       <li><a [routerLink]="['create-coupan']" routerLinkActive="link-active">CREATE COUPON</a></li>
+       <li><a [routerLink]="['create-admin']" routerLinkActive="link-active">CREATE ADMIN</a></li>
+       <li ><a style="cursor: pointer" [routerLink]="['/']" (click)="logout()">LOGOUT</a></li>
+
+     </ul>
+
+   </div>
+ 
+ 
+ 
+ 

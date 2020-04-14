@@ -1,0 +1,80 @@
+#container{
+    padding : 10px 20px;
+}
+
+.form-control{
+    border : 1px solid black;
+    background-color: #fff;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:black;
+    opacity: 1; /* Firefox */
+  }
+
+  .card{
+    background-color : transparent;
+      padding : 20px 30px;
+      border-radius: 15px;
+  }
+  
+
+  .btn-tertiary {
+    color : #fff;
+    padding: 0;
+    background-color: chocolate; 
+    line-height: 40px;
+    width: 100%;
+    margin: auto;
+    display: block;
+    border-radius: 25px;
+    // border: 2px solid #555;
+    &:hover, 
+      &:focus {
+        color: lighten(#fff, 20%);
+        border-color: lighten(#fff, 20%);
+      }
+  }
+  
+  /* input file style */
+  
+  .input-file {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+      border-radius: 25px;
+      color : #fff; 
+    + .js-labelFile {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 10px;
+      cursor: pointer;
+      .icon:before {
+        //font-awesome
+        content: "\f093";
+      }
+      &.has-file {
+        .icon:before {
+          //font-awesome
+          content: "\f00c";
+          color: #5AAC7B;
+        }
+      }
+    }
+  }
+
+  
+h1 {
+  font-size: 32px;
+  color: #202022;
+  margin-left : 25px;
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  pointer-events: none;
+  margin-bottom: 15px;
+}

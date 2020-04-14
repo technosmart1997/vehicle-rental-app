@@ -1,0 +1,45 @@
+
+
+<div class="main_div">
+  <div class="login-wrap">
+
+      <h3 style="text-align: center; color : #fff">Create Account</h3>
+  <br>
+    <form class="form" [formGroup] = "myForm" (ngSubmit) = "onSubmit(myForm)">
+      <div class="row">
+         <div class="col-md-1"></div>
+  
+      <div class="col-md-10">
+         
+            <div class="input-group inp" style="border-radius: 25px">
+               <input style="border-radius : 25px;" type="text" formControlName="firstName" placeholder="First Name"  class="form-control">
+              </div><br>
+              <div class="input-group inp" style="border-radius: 25px">
+                  <input style="border-radius : 25px;" type="text" formControlName="lastName" placeholder="Last Name"  class="form-control">
+                 </div>
+              <br>
+              <div class="input-group" style="border-radius : 25px;">
+                  <input style="border-radius : 25px;" type="email" formControlName="email" placeholder="Email"  class="form-control">
+                </div><br>
+                <div class="input-group" style="border-radius : 25px;">
+                    <input style="border-radius : 25px;" type="password" formControlName="password"  placeholder="Password" class="form-control">
+                  </div>
+      
+          
+        </div>
+  
+        <div class="col-md-1">
+        
+          </div>
+    </div>
+    <br>
+    <h5 class="text-center info" >
+       Have a referral code ?
+      </h5>
+      <input type="submit" value="CREATE ACCOUNT" [disabled]="!myForm.valid" class=" btn btn-block create_btn">
+ 
+      </form>
+  
+  </div>
+  
+</div>

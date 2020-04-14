@@ -1,0 +1,21 @@
+
+<div *ngIf="vehicleData" class="card card-block">
+    <div style="padding : 5px;">
+        <img *ngIf="vehicleData.photoUrl"  [src]="vehicleData.photoUrl" alt="Vehicle Photo"/>
+        <img *ngIf="!vehicleData.photoUrl" src="../../../assets/img/notavailable.jpg" alt="Vehicle Photo"/>
+    </div>
+
+        <p style="text-align: center;font-weight: bold;font-size:16px;margin-bottom: 15px"> {{vehicleData.VehicleName}}</p>
+        <p><span id="key">Price Per Day :</span>&nbsp; &#8377; &nbsp;{{vehicleData.PricePerDay}}</p>
+        <p><span id="key">Price Per Hour :</span>&nbsp; &#8377; &nbsp;{{vehicleData.PricePerHour}}</p>
+        <p><span id="key">Address :</span>&nbsp; &nbsp;{{vehicleData.ParkingAddress}}</p>
+        <p><span id="key">City :</span>&nbsp; &nbsp; {{vehicleData.City}}</p>
+        
+        <div class="buttons">
+            <div class="row">
+                <div class="col-md-12">
+                    <button  (click)="deleteVehicle()" class="btn btn-danger btn-block">Delete Vehicle</button>
+                </div>
+            </div>
+        </div>
+</div>

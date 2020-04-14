@@ -1,0 +1,71 @@
+.alert {
+    border-radius: 10px; 
+  }
+  
+  
+  h1 {
+    font-size: 32px;
+    color: #202022;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    pointer-events: none;
+    margin-bottom: 15px;
+  }
+  
+  #vendor_info{
+      height : 50px;
+  }
+
+.container {
+padding : 40px;
+}
+
+.movie-card {
+background-color: #fefefe;
+min-height: 20rem;
+border-radius: 10px;
+/* margin-left : px; */
+box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+margin-top :  20px;
+}
+
+
+.poster-float img {
+border-radius: 5px;
+box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.1) !important;
+}
+
+#back {
+width: 30px;
+cursor: pointer;
+}
+
+.images img {
+border-radius: 5px;
+box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.1) !important;
+}
+
+.booktn {
+ margin-bottom: 20px;
+}
+
+.vehicle_img {
+ width: 100%;
+}
+
+.movie-title {
+padding-top: 0.5em;
+font-size: 1.2em;
+overflow: hidden;
+text-overflow: ellipsis;
+max-width: 150px;
+}
+
+
+.movie-lead {
+margin-top: -0.2em;
+font-size: .9em;
+color: #8a99a2;
+}
+

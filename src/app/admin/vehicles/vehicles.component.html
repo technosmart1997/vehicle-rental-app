@@ -1,0 +1,40 @@
+<div class="row">
+    
+        <div style="margin-left: 20px" class="col-md-12"><h1><strong>VEHICLES</strong></h1></div>
+    </div>
+        <hr>
+        <div class="row" style="padding: 15px;">
+            <div class="col-0 col-sm-1 col-md-1 col-lg-2 col-xl-2"></div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-5">
+                   <select class="form-control" style="background-color : #fff"  [(ngModel)]="selectedCity">
+                       <option *ngFor="let city of cities" value="{{ city.name }}">{{ city.name }}</option>
+                   </select>
+            </div>
+            <br><br>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+                <button style="margin: 0; border-radius: 25px;" class="btn btn-primary btn-block" (click)="findVehicles()">Find Vehicles</button>
+            </div>
+            <div class="col-0 col-sm-1 col-md-1 col-lg-2 col-xl-2"></div>
+        </div>
+        <p><br></p>
+    <div class="row" style="padding: 15px;">
+        <div class="col-md-1"></div>
+        <div class="col-md-10  text-center" >
+                <div *ngIf="showError" class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Sorry!</strong> There are no Services!
+                </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    
+
+      <div class="container mt-2">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" *ngFor="let vehicle of vehicles">
+                <app-vehicle [vehicle_detail]="vehicle" (onDelete) = "onDelete()"></app-vehicle>  
+            </div>
+        </div>
+        
+      </div>
+      

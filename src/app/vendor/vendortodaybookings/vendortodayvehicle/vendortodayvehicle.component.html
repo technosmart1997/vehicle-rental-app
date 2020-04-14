@@ -1,0 +1,16 @@
+<div *ngIf="vehicleData" class="card card-block">
+  <div style="padding : 5px;">
+      <img *ngIf="vehicleData.photoUrl"  [src]="vehicleData.photoUrl" alt="Vehicle Photo"/>
+      <img *ngIf="!vehicleData.photoUrl" src="../../../assets/img/notavailable.jpg" alt="Vehicle Photo"/>
+  </div>
+
+  <p style="text-align: center;font-weight: bold;font-size:16px;margin-bottom: 15px"> {{vehicleData.VehicleName}}</p>
+  <p><span id="key">Price Per Day :</span>&nbsp; &#8377; &nbsp;{{vehicleData.PricePerDay}}</p>
+  <p><span id="key">Price Per Hour :</span>&nbsp; &#8377; &nbsp;{{vehicleData.PricePerHour}}</p>
+  <p><span id="key">Customer Name :</span>&nbsp; &nbsp;{{vehicleData.UserName}}</p>
+  <p><span id="key">Parking Address :</span>&nbsp; &nbsp;{{vehicleData.ParkingAddress}}</p>
+  <p><span id="key">Total Amount :</span>&nbsp; &#8377; &nbsp;{{vehicleData.TotalAmount}}</p>
+  <p><span id="key">No of Orders :</span>&nbsp; &nbsp;{{vehicleData.BookedNoOfVehicles}}</p>
+  <p><span id="key">Booking Date :</span>&nbsp; &nbsp;{{vehicleData.BookingDate}}</p>
+  <p><span id="key">Booked :</span>&nbsp; &nbsp;{{vehicleData.AvailableFromDate}} - {{vehicleData.AvailableToDate}}</p>
+</div>

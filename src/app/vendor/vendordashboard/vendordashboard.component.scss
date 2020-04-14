@@ -1,0 +1,35 @@
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#main_sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#main_sidebar.active {
+    margin-left: -250px;
+}
+
+@media (max-width: 768px) {
+    #main_sidebar {
+        margin-left: -250px;
+    }
+    #main_sidebar.active {
+        margin-left: 0;
+    }
+}
+
+#content {
+    width: 100%;
+    background-image:url("assets/img/login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+//    / background-color : #007ec6;
+}

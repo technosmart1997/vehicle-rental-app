@@ -1,0 +1,38 @@
+<div class="row">
+    
+    <div style="margin-left: 25px;" class="col-md-12"><h1><strong>VEHICLE DETAIL</strong></h1></div>
+</div>
+    <hr>
+  <div class="container mt-2">
+    <div *ngIf="vehicleData" class="row">
+      <div class="col-0 col-sm-2 col-md-2 col-lg-3 col-xl-3"></div>
+        <div class="col-12 col-sm-8 col-md-7 col-lg-6 col-xl-4" >
+            <div class="card card-block">
+              <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <img *ngIf ="!vehicleData.VehiclePhoto" style="height: 220px" src="../../../assets/img/notavailable.jpg" alt="Vehicle Photo"/>
+                        <img *ngIf ="vehicleData.VehiclePhoto" style="height: 220px" [src]="vehicleData.VehiclePhoto" alt="Vehicle Photo"/>
+                      </div>
+                </div>
+              </div>
+                
+                    <div style="min-height:80px">
+                         <p style="text-align: center;font-weight: bold;font-size:18px;margin-bottom: 15px"> {{vehicleData.VehicleName}}</p>
+                        <p><span id="key">Price Per Day :</span>&nbsp; {{vehicleData.PricePerDay}} </p>
+                        <p><span id="key">Price Per Hour :</span>&nbsp; {{vehicleData.PricePerHour}} </p>
+                        <p><span id="key">Address :</span>&nbsp; {{vehicleData.ParkingAddress}} </p>
+                        <p><span id="key">City : </span>&nbsp; <span style="font-size:13px;">{{vehicleData.City}} </span></p>
+                        <!-- <p><span id="key">From :</span>&nbsp; {{vehicleData.from}} </p>
+                        <p><span id="key">To :</span>&nbsp; {{vehicleData.to}} </p> -->
+                      </div> 
+                    
+                   
+            </div>
+            
+        </div>
+        <div class="col-0 col-sm-2 col-md-3 col-lg-3 col-xl-5"></div>
+    </div>
+    
+  </div>
+  

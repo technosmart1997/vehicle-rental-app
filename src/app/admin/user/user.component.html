@@ -1,0 +1,28 @@
+ <div *ngIf="userData" class="card card-block">
+        <div style="padding : 5px;">
+            <img *ngIf="userData.photoURL" [src]="userData.photoURL" alt="Photo of vehicle"/>
+            <img *ngIf="!userData.photoURL" src="../../../assets/img/notavailable.jpg" alt="Photo of vehicle"/>
+        </div>
+        <br>
+       <div style="min-height: 100px;">
+        <p><span id="key">Name :</span>&nbsp; {{userData.Name}}</p>
+        <p><span id="key">Contact :</span>&nbsp; {{userData.PhoneNumber}} </p>
+        <p><span id="key">Email :</span>&nbsp; <span style="font-size:13px;">{{userData.Email}} </span></p>
+       </div>     
+            
+            <div class="buttons">
+                <div class="row">
+                        <div class="col-md-6">
+                            <button (click)="userProfile(user_id)" class="btn btn-success btn-block">Profile</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button (click)="userBookings(user_id)" class="btn btn-success btn-block">Bookings</button>
+                        </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-12">
+                        <button  (click)="deleteUser()" class="btn btn-danger btn-block">Delete User</button>
+                    </div>
+                </div>
+            </div>
+    </div>

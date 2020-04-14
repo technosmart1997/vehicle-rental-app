@@ -1,0 +1,23 @@
+<div *ngIf="tripData" class="card card-block">
+
+  <div style="padding : 5px;">
+      <img *ngIf="tripData.photoUrl" [src]="tripData.photoUrl" alt="Trip Photo"/>
+      <img src="../../../assets/img/notavailable.jpg" alt="Trip Photo"/>
+  </div>
+  <br>
+  <div style="min-height: 180px">  
+      <p style="text-align: center;font-weight: bold;font-size:16px;margin-bottom: 15px"> {{tripData.VehicleName}}</p>
+      <p><span id="key">Price Per Hour :</span>&nbsp; &#8377; &nbsp;{{trip.PricePerHour}}</p>
+      <p><span id="key">Price Per Day :</span>&nbsp; &nbsp; {{trip.PricePerDay}}</p> 
+      <p><span id="key">Vehicles Count :</span>&nbsp; &nbsp;{{trip.NoOfVehicles}}</p>
+      <p><span id="key">Address :</span>&nbsp; &nbsp;{{trip.ParkingAddress}}</p>
+      <p><span id="key">City :</span>&nbsp; &nbsp;{{trip.City}}</p>
+    </div>
+    <div class="buttons">
+      <div class="row">
+              <div class="col">
+                  <button (click)="deleteTrip()" class="btn btn-danger btn-block">Delete</button>
+              </div>
+      </div>  
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container-fluid mt-2">
+  <div class="row">
+      <div  class="col-md-12"><h1><strong>TRIP SERVICES</strong></h1></div>
+  </div>
+  <hr>
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10  text-center" >
+              <div *ngIf="showError" class="alert alert-danger">
+                      <strong>Sorry!</strong> No Trip Services by you!
+              </div>
+      </div>
+      <div class="col-md-1"></div>
+  </div>
+
+  <div class="row">
+  <div  class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3"   *ngFor="let trip of trips">
+      <app-vendortrip [trip_detail]="trip" (onDelete) = "onDelete()"></app-vendortrip>
+ </div>
+
+</div>
+<br>
+</div>

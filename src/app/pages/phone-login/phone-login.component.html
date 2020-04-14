@@ -1,0 +1,104 @@
+
+<div class="main_div">
+    <div class="login-wrap">
+  
+        <h3 style="text-align: center; color : #fff; margin:0">USER LOG IN</h3>
+  
+      <p><br></p>
+  
+      <div class="row">
+           <div class="col-md-1"></div>
+  
+        <div class="col-md-10">
+            <form>
+              <div class="input-group">
+                  <input type="tel" name="contact" placeholder="Mobile Number" [(ngModel)]="phone" class="form-control">
+                </div>
+                  <br>
+                <div class="input-group">
+                    <input type="submit" style="border-radius : 25px;cursor: pointer;background-color: #8d3514;color : #fff"  class="btn btn-block" value="Send OTP Code" (click)="sendLoginCode()" >
+                  </div>
+            </form>
+            <br>
+          </div>
+          <div class="col-md-1"></div>
+          
+      </div>
+  
+      <h6 class="text-center info" >
+          A 6-Digit Verification Code will be sent via SMS <br>
+          <span >
+              to verify your mobile number
+          </span>
+        </h6>
+       <br>
+  
+     <div class="row">
+       <div class="col-md-1"></div>
+       <div class="col-md-11">
+          <div style="margin:auto" id="recaptcha-container"></div>
+       </div>
+      
+       <div class="col-md-1"></div>
+     </div>
+      <br>
+      <div class="row">
+        <div class="col-md-1">
+          
+        </div>
+        <div class="col-md-10 text-center otp_code"> 
+          <div class="upper-part">
+              <div>
+                  <h5  style="font-size: 16px;  "> We have sent a "6 digit code"  on {{phone}}</h5>              
+              </div>
+        
+          </div>
+          
+          <div class="lower-part">
+            <div class="row">
+  
+              <div id="verify" class="col-md-8">
+                  <div class="input-group">
+                      <input type="tel" name="contact" placeholder="OTP" [(ngModel)]="verificationCode" class="form-control" maxlength="6">
+                    </div>
+              </div>
+              <div class="col-md-4">
+                  <input type="submit" style="border-radius : 25px;cursor: pointer;background-color: #8d3514;color : #fff" value="Verify" class="btn btn-block" (click)="verifyLoginCode()"/>
+              </div>
+             
+            </div>
+  
+          </div>
+          
+        </div>
+        <div class="col-md-1">
+          <!-- <hr> -->
+        </div>
+      </div>
+      <div class="text-center" *ngIf="user">
+        <h5  style="font-size: 16px;color : #fff">  Your Phone Number has been verified!</h5>
+    
+      </div>
+     <br>
+        <div class="row">
+          <div class="col-md-5">
+            <hr>
+          </div>
+          <div class="col-md-2 text-center" style="color: #fff; margin-top : 10px;"> 
+              OR  
+          </div>
+          <div class="col-md-5">
+            <hr>
+          </div>
+        </div>
+        <p><br></p>
+  
+        <button style="background-color: #8d3514; color: #fff" class=" btn btn-block call_btn">
+            <i class="fas fa-phone"></i>&nbsp; &nbsp; ONE TAP LOGIN
+        </button>
+        <br><br>
+  
+  
+  </div>
+  
+  </div>

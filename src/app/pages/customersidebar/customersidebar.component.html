@@ -1,0 +1,36 @@
+<div id="sidebar" #sidebar>
+    
+
+    <div id="sidebar">
+     <div class="sidebar-header">
+          <div *ngIf="show" id="header_info">
+            <h4>Welcome</h4>
+            <h5 style="font-size: 14px">{{ user }}</h5>
+          </div>
+          <div *ngIf="!show" id="header_info">
+              <h4>Welcome</h4>
+              <h6> Expore Our Services </h6>
+            </div>
+       </div>
+     
+       <ul class="list-unstyled components">
+        
+        <li *ngIf="show"><a [routerLink]="['profile']" routerLinkActive="link-active">PROFILE</a></li>
+         <li><a [routerLink]="['shopping-cart']" [queryParams]="{ type: 'Bikes'}" routerLinkActive="link-active">BIKES</a></li>
+         <li><a [routerLink]="['shopping-cart']" [queryParams]="{ type: 'Cars with drivers'}" routerLinkActive="link-active">CARS WITH DRIVERS</a></li>
+         <li><a [routerLink]="['shopping-cart']" [queryParams]="{ type: 'Self drive cars'}" routerLinkActive="link-active">SELF DRIVE CARS</a></li>
+         <li><a [routerLink]="['shopping-cart']" [queryParams]="{ type: 'trips'}" routerLinkActive="link-active">ADVENTUROUS TRIPS</a></li>
+
+         <li *ngIf="show"><a [routerLink]="['saved-vehicles']" routerLinkActive="link-active">WISHLIST</a></li>
+         <li *ngIf="show"><a [routerLink]="['customer-bookings']" routerLinkActive="link-active">BOOKINGS</a></li>
+         <!-- <li *ngIf="show"><a [routerLink]="['trip-bookings']" routerLinkActive="link-active">TRIP BOOKINGS</a></li> -->
+
+         <li *ngIf="show"><a style="cursor: pointer" [routerLink]="['/']" (click)="logout()">LOGOUT</a></li>
+  
+       </ul>
+  
+     </div>
+   
+   
+   
+   

@@ -1,0 +1,46 @@
+<div class="main_div">
+        <div class="login-wrap">
+            <h3 style="text-align: center; color : #fff">Complete Your Profile</h3>
+          <p><br></p>
+        
+          <div class="row">
+               <div class="col-md-1"></div>
+        
+            <div class="col-md-10">
+                <form>
+                 
+                      <div class="input-group inp" style="border-radius: 25px">
+                          <input style="border-radius : 25px;" type="text" name="address" placeholder="Address" [(ngModel)]="address" class="form-control">
+                         </div>
+                         <br>
+                         <div class="input-group" style="border-radius : 25px;">
+                             <input style="border-radius : 25px;" type="text" name="aadharno" placeholder="Aadhar card number" [(ngModel)]="aadharno" class="form-control">
+                           </div>
+                           
+                          <br><br> 
+                           <button class=" btn btn-success btn-block create_btn">
+                            UPLOAD AADHAR PHOTO
+                         </button>
+                    
+                         <p><br></p>
+                    
+                         <button class=" btn btn-success btn-block create_btn" (click)="onCompleteProfile()">
+                           COMPLETE PROFILE
+                         </button>
+                </form>
+              </div>
+        
+              <div class="col-md-1">
+              
+                </div>
+          </div>
+          <br>
+        
+            <br>
+        
+           
+            
+        
+        </div>
+        
+    </div>

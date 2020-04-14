@@ -1,0 +1,21 @@
+    
+    <div *ngIf="vendorData" class="card card-block">
+        <div style="padding : 5px;">
+            <img [src]="vendorData.photoURL" alt="vendor image"/>
+        </div>
+        <br>
+            <div style="min-height: 100px">
+                 <p><span id="key">Name :</span>&nbsp;{{vendor.Name}}</p>
+                 <p><span id="key">Contact :</span>&nbsp; {{vendor.PhoneNumber}} </p>
+                 <p><span id="key">Email :</span>&nbsp; <span style="font-size:13px;">{{vendor.Email}} </span></p>
+            </div>
+            
+            <div class="buttons">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="verify"  (click)="moreDetail()" class="btn btn-success btn-block">Click To Verify</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    

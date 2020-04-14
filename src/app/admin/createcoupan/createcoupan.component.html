@@ -1,0 +1,71 @@
+<div id="container" class="container">
+    <div  class="row">
+        <div class="col-md-12"><h1><strong>CREATE COUPON</strong></h1></div>
+    </div>
+    <br><br>
+    <div class="well well-lg">
+      <div class="row">
+        <div class="col-md-3">
+           
+        </div>
+       
+        <div class="col-md-6">
+  
+          <div class="card">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <form class="form" [formGroup] = "myForm" (ngSubmit) = "onSubmit(myForm)">
+                
+                                  <div class="form-group">
+                                      <label for="selectvehicletype">SELECT VEHICLE TYPE</label>
+                                      <select  formControlName="coupanVehicleType" class="form-control" id="seelctvehicletype">
+                                        <option value="all">ALL</option>  
+                                        <option value="bike">BIKE</option>
+                                        <option value="carwithdriver">CAR WITH DRIVER</option>
+                                        <option value="selfdrivecars">SELF DRIVE CARS</option>
+                                      </select>
+                                    </div>
+                      
+                                  <div class="form-group">
+                                    <input type="text" formControlName="coupanCode" class="form-control"  placeholder="Coupan Code">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="text" formControlName="coupanDesc" class="form-control"  placeholder="Coupan Description">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" formControlName="discount" class="form-control"  placeholder="Discount In Percent">
+                                      </div>
+                                      <div class="form-group">
+                                          <input type="text" formControlName="vehicleName" class="form-control"  placeholder="Vehicle Name(Type All , if applicable to all vehicles)">
+                                      </div>
+                                        
+                                          <div class="form-group">
+                                              <input type="number" formControlName="vehicleCount" placeholder="Max. no of times a user can use this coupan" class="form-control" />
+                                            </div>
+                           
+                                          <div class="text-center">
+                                    
+                                                <div class="input-group">
+                                                    <input  [disabled]="!myForm.valid" type="submit" style="border-radius: 25px" class="btn btn-success btn-block" value="ADD COUPON"/>
+                      
+                                                  </div>
+                
+                                          </div>
+                                        </form>
+                                  </div>
+                                    
+                          </div>
+          </div>
+            
+          </div>
+    
+        <div class="col-md-3">
+            
+        </div>
+      </div>
+    </div>
+    
+  
+  </div>
+  
+  

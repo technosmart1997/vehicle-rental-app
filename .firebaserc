@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "webapp-f0687",
+    "default": "webapp-f0687"
+  }
+}

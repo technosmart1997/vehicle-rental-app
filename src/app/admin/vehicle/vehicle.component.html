@@ -1,0 +1,26 @@
+
+<div *ngIf="vehicleData" class="card card-block">
+        <!-- <h4 style="margin:5px" class="card-title text-right"><i class="material-icons">settings</i></h4> -->
+        <div style="padding : 5px;">
+            <img *ngIf="vehicleData.photoUrl" [src]="vehicleData.photoUrl" alt="Vehicle Photo"/>
+            <img *ngIf="!vehicleData.photoUrl" src="../../../assets/img/notavailable.jpg" alt="Vehicle Photo"/>
+        </div>
+            
+             <p style="text-align: center;font-weight: bold;font-size:16px;margin-bottom: 15px"> {{vehicleData.VehicleName}}</p>
+             <p><span id="key">Price Per Day :</span>&nbsp; &#8377; &nbsp;{{vehicleData.PricePerDay}}</p>
+             <p><span id="key">Price Per Hour :</span>&nbsp; &#8377; &nbsp;{{vehicleData.PricePerHour}}</p>
+             <!-- <p><span id="key">Contact :</span>&nbsp; &nbsp;{{vehicleData.}}</p> -->
+             <p><span id="key">Address :</span>&nbsp; &nbsp;{{vehicleData.Address}}</p>
+            <div class="buttons">
+                <div class="row">
+                        <div class="col-md-12">
+                            <button (click)="editVehicle()" class="btn btn-primary btn-block">Edit</button>
+                        </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-12">
+                        <button  (click)="deleteVehicle()" class="btn btn-danger btn-block">Delete Vehicle</button>
+                    </div>
+                </div>
+            </div>
+    </div>

@@ -1,0 +1,31 @@
+<div id="sidebar" #sidebar>
+    
+
+   <div id="sidebar">
+    <div class="sidebar-header">
+      
+      <div style="margin-top: 40px;" id="header_info">
+        <h5>Welcome</h5>
+        <h5 *ngIf="user" style="font-size: 14px">{{ user.Name }}</h5>
+      </div>
+
+  </div>
+    
+      <ul class="list-unstyled components">
+        <li ><a routerLink="/vendor-dashboard/profile" routerLinkActive="link-active">PROFILE</a></li>
+        <li *ngIf="verified"><a routerLink="/vendor-dashboard/vendor-services" routerLinkActive="link-active">SERVICES</a></li>
+        <li *ngIf="verified"><a routerLink="/vendor-dashboard/vendor-trips" routerLinkActive="link-active">ADVENTUROUS TRIPS</a></li>
+        <li *ngIf="verified"><a routerLink="/vendor-dashboard/bookings" routerLinkActive="link-active">BOOKINGS</a></li>
+        <li *ngIf="verified"><a routerLink="/vendor-dashboard/booking-today" routerLinkActive="link-active">TODAY's BOOKINGS</a></li>
+    
+        <li *ngIf="verified"><a routerLink="/vendor-dashboard/vehicle-upload" routerLinkActive="link-active">UPLOAD VEHICLE</a></li>
+        <li *ngIf="verified"><a routerLink="/vendor-dashboard/trip-upload" routerLinkActive="link-active">ADVENTURE TRIP UPLOAD</a></li>
+        <li *ngIf="verified"><a routerLink="/vendor-create-account" routerLinkActive="link-active">PROFILE UPDATE</a></li>
+        <li><a style="cursor: pointer" [routerLink]="['/']" (click)="logout()">LOGOUT</a></li>
+      </ul>
+ 
+    </div>
+  
+  
+  
+  
