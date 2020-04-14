@@ -32,7 +32,7 @@
     "firebase": "^5.8.0",
     "font-awesome": "4.7.0",
     "google-maps-ng2": "^1.0.10",
-    "jquery": "3.2.1",
+    "jquery": "3.4.0",
     "jw-bootstrap-switch-ng2": "1.0.10",
     "ng2-nouislider": "1.7.7",
     "nouislider": "9.2.0",
